@@ -11,14 +11,14 @@ import zoeque.omikujava.dto.ResultDto;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-public class OmikujiServiceTest {
+public class AbstractOmikujiServiceTest {
 
   @Autowired
   OmikujiService omikujiService;
 
   @Test
   public void attemptToLottery_thenReturnResult() {
-    Try<ResultDto> resultDtoTry = omikujiService.execute();
+    Try<ResultDto> resultDtoTry = omikujiService.drawLottery();
     Assertions.assertTrue(resultDtoTry.isSuccess());
   }
 }
