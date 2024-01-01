@@ -20,7 +20,7 @@ public class OmikujiController {
   @GetMapping("/omikuji")
   public ResponseEntity execute() {
     try {
-      Try<ResultDto> executionTry = omikujiService.execute();
+      Try<ResultDto> executionTry = omikujiService.drawLottery();
       if (executionTry.isFailure()) {
         throw new RuntimeException(executionTry.getCause());
       }
