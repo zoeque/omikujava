@@ -14,7 +14,7 @@ public abstract class AbstractOmikujiService {
    *
    * @return The ID of the {@link OmikujiModel} with the result {@link Try}.
    */
-  protected Try<Integer> execute() {
+  protected Try<Integer> chooseFortune() {
     try {
       return Try.success(lottery().get());
     } catch (Exception e) {

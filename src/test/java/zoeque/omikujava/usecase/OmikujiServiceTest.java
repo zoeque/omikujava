@@ -11,7 +11,7 @@ import zoeque.omikujava.dto.ResultDto;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
-public class AbstractOmikujiServiceTest {
+public class OmikujiServiceTest {
 
   @Autowired
   OmikujiService omikujiService;
