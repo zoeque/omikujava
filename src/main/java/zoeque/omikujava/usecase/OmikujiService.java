@@ -9,11 +9,12 @@ import zoeque.omikujava.dto.ResultDto;
  * The extension class of the omikuji service.
  */
 @Service
-public class OmikujiService extends AbstractOmikujiService{
-  public Try<ResultDto> drawLottery(){
+public class OmikujiService extends AbstractOmikujiService {
+  public Try<ResultDto> drawLottery() {
     return Try.success(
             new ResultDto(
-                    OmikujiModel.getOmikujiExpression(super.execute().get())
+                    OmikujiModel.omikujiExpression
+                            .apply(super.chooseFortune().get())
             )
     );
   }

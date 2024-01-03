@@ -1,6 +1,7 @@
 package zoeque.omikujava.domain.model;
 
 import java.util.Arrays;
+import java.util.function.Function;
 import lombok.Getter;
 
 /**
@@ -29,16 +30,14 @@ public class OmikujiModel {
   }
 
   /**
-   * Returns the omikuji expression by ID
-   *
-   * @param id The omikuji expression ID with int value
-   * @return String expression. If there is no value mapping with the value, return null.
+   * The omikuji expression by ID
    */
-  public static String getOmikujiExpression(int id) {
+  public static final Function<Integer, String> omikujiExpression
+          = id -> {
     return Arrays.stream(OmikujiModel.NewYearModel.values())
             .filter(model -> model.getId() == id)
             .findFirst()
             .map(OmikujiModel.NewYearModel::getExpression)
             .orElse(null);
-  }
+  };
 }

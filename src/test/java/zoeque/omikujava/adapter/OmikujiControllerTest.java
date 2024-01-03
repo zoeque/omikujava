@@ -33,4 +33,12 @@ public class OmikujiControllerTest {
                     .content(""))
             .andExpect(status().isOk());
   }
+
+  @Test
+  public void sendFullServiceRequestToTheMockMvcController_thenReturnResult() throws Exception {
+    mvc.perform(get("/omikuji/full")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(""))
+            .andExpect(status().isOk());
+  }
 }
